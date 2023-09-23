@@ -28,6 +28,10 @@ def play_sound(sound_array, sample_rate=44100):
     sd.wait()
 
 def on_key_release(key):
+    if key == keyboard.Key.esc:
+        listener.stop()
+        return
+    
     try:
         key_char = key.char
     except AttributeError:
